@@ -34,4 +34,39 @@ python -m solicitudes          # demostración con datos sintéticos
 python -m unittest discover -v # 50 pruebas
 ```
 
+```python
+from solicitudes import (RepositorioJSON, SolicitudService, ConsultaService,
+                         DatosNuevaSolicitud)
+
+repo = RepositorioJSON("solicitudes.json")
+comandos, consultas = SolicitudService(repo), ConsultaService(repo)
+comandos.crear_solicitud(DatosNuevaSolicitud("30111222", "Estudiante Demo", "Reclamo", "Desc"))
+print(consultas.generar_reporte())
+```
+
+La fachada `GestorSolicitudesConsola.ejecutar_operacion(...)` conserva la firma y los mensajes de la
+versión 1 y sirve para demostrar la equivalencia de comportamiento.
+
+## Estructura
+
+```
+legacy/gestor_solicitudes_v1.py   versión inicial (referencia, tag estado-inicial)
+solicitudes/                      versión refactorizada (tag estado-refactorizado)
+  modelos.py                      entidades, enum de estados, DatosNuevaSolicitud
+  excepciones.py                  excepciones del dominio
+  repositorio.py                  contratos (lectura/escritura) + JSON y memoria
+  servicios.py                    SolicitudService (comandos) y ConsultaService (consultas)
+  consola.py                      fachada de consola compatible con la versión 1
+tests/                            unitarias, de contrato, de equivalencia v1/v2
+docs/                             checklist de code review, decisiones, evidencias, diagramas
+```
+
+## Tags de Git
+
+`estado-inicial`, `etapa-diagnostico`, `etapa-refactoring`, `etapa-pruebas`, `etapa-docs`,
+`estado-refactorizado`. Ver `docs/GUIA_TAGS.md`.
+
+## Datos
+
+Todos los datos de ejemplo y de prueba son sintéticos.
 
