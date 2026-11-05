@@ -1,0 +1,54 @@
+### Indice de mantenibilidad (A>=20 buena)
+-- v1
+legacy/gestor_solicitudes_v1.py - A (48.05)
+-- v2
+solicitudes/excepciones.py - A (100.00)
+solicitudes/__init__.py - A (100.00)
+solicitudes/servicios.py - A (45.37)
+solicitudes/consola.py - A (66.11)
+solicitudes/repositorio.py - A (64.91)
+solicitudes/modelos.py - A (46.82)
+solicitudes/__main__.py - A (69.33)
+
+### Lineas (raw) v1
+   legacy/gestor_solicitudes_v1.py
+       LOC: 66
+       LLOC: 59
+       SLOC: 58
+       Comments: 1
+       Single comments: 1
+       Multi: 0
+       Blank: 7
+       - Comment Stats
+           (C % L): 2%
+           (C % S): 2%
+           (C + M % L): 2%
+### Lineas (raw) v2 por archivo
+solicitudes/excepciones.py
+    LOC: 29
+    LLOC: 17
+    SLOC: 11
+solicitudes/__init__.py
+    LOC: 18
+    LLOC: 7
+    SLOC: 16
+solicitudes/servicios.py
+    LOC: 83
+    LLOC: 54
+    SLOC: 64
+solicitudes/consola.py
+    LOC: 99
+    LLOC: 79
+    SLOC: 81
+solicitudes/repositorio.py
+    LOC: 97
+    LLOC: 57
+    SLOC: 64
+solicitudes/modelos.py
+    LOC: 70
+    LLOC: 66
+    SLOC: 48
+solicitudes/__main__.py
+    LOC: 22
+    LLOC: 15
+    SLOC: 16

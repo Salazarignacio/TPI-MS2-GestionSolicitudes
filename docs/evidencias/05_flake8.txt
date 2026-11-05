@@ -1,0 +1,13 @@
+### flake8 --max-line-length=100  (v1)
+legacy/gestor_solicitudes_v1.py:2:12: E401 multiple imports on one line
+legacy/gestor_solicitudes_v1.py:4:1: E302 expected 2 blank lines, found 1
+legacy/gestor_solicitudes_v1.py:11:101: E501 line too long (119 > 100 characters)
+legacy/gestor_solicitudes_v1.py:25:46: E701 multiple statements on one line (colon)
+legacy/gestor_solicitudes_v1.py:34:58: E701 multiple statements on one line (colon)
+legacy/gestor_solicitudes_v1.py:47:54: E701 multiple statements on one line (colon)
+legacy/gestor_solicitudes_v1.py:54:101: E501 line too long (103 > 100 characters)
+legacy/gestor_solicitudes_v1.py:57:101: E501 line too long (160 > 100 characters)
+[total v1: 8]
+
+### flake8 --max-line-length=100  (v2)
+[total v2: 0]

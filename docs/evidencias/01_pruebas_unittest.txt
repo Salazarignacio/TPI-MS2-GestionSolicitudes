@@ -1,0 +1,55 @@
+test_crear_no_sobrescribe_el_archivo_danado (tests.test_consola.TestConsolaConArchivoDanado.test_crear_no_sobrescribe_el_archivo_danado) ... ok
+test_no_se_cae_y_avisa (tests.test_consola.TestConsolaConArchivoDanado.test_no_se_cae_y_avisa) ... ok
+test_la_demo_corre_y_muestra_el_reporte (tests.test_demo.TestDemo.test_la_demo_corre_y_muestra_el_reporte) ... ok
+test_la_secuencia_cubre_las_cinco_operaciones (tests.test_equivalencia_v1_v2.TestEquivalenciaV1V2.test_la_secuencia_cubre_las_cinco_operaciones) ... ok
+test_los_archivos_generados_son_identicos_byte_a_byte (tests.test_equivalencia_v1_v2.TestEquivalenciaV1V2.test_los_archivos_generados_son_identicos_byte_a_byte) ... ok
+test_misma_secuencia_mismo_comportamiento (tests.test_equivalencia_v1_v2.TestEquivalenciaV1V2.test_misma_secuencia_mismo_comportamiento) ... ok
+test_datos_validos (tests.test_modelos.TestDatosNuevaSolicitud.test_datos_validos) ... ok
+test_dni_corto_es_invalido (tests.test_modelos.TestDatosNuevaSolicitud.test_dni_corto_es_invalido) ... ok
+test_dni_exactamente_siete_caracteres_es_valido (tests.test_modelos.TestDatosNuevaSolicitud.test_dni_exactamente_siete_caracteres_es_valido) ... ok
+test_dni_vacio_o_nulo_es_invalido (tests.test_modelos.TestDatosNuevaSolicitud.test_dni_vacio_o_nulo_es_invalido) ... ok
+test_tipo_vacio_o_nulo_es_invalido (tests.test_modelos.TestDatosNuevaSolicitud.test_tipo_vacio_o_nulo_es_invalido) ... ok
+test_desde_texto_acepta_estado_ya_tipado (tests.test_modelos.TestEstadoSolicitud.test_desde_texto_acepta_estado_ya_tipado) ... ok
+test_desde_texto_invalido_lanza_excepcion (tests.test_modelos.TestEstadoSolicitud.test_desde_texto_invalido_lanza_excepcion) ... ok
+test_desde_texto_valido (tests.test_modelos.TestEstadoSolicitud.test_desde_texto_valido) ... ok
+test_asignar_responsable (tests.test_modelos.TestSolicitud.test_asignar_responsable) ... ok
+test_cambiar_estado_acepta_texto (tests.test_modelos.TestSolicitud.test_cambiar_estado_acepta_texto) ... ok
+test_valores_iniciales (tests.test_modelos.TestSolicitud.test_valores_iniciales) ... ok
+test_guardar_reemplaza_el_contenido (tests.test_repositorios_contrato.TestRepositorioEnMemoria.test_guardar_reemplaza_el_contenido) ... ok
+test_guardar_y_obtener (tests.test_repositorios_contrato.TestRepositorioEnMemoria.test_guardar_y_obtener) ... ok
+test_modificar_lo_leido_no_persiste_sin_guardar (tests.test_repositorios_contrato.TestRepositorioEnMemoria.test_modificar_lo_leido_no_persiste_sin_guardar) ... ok
+test_repositorio_nuevo_esta_vacio (tests.test_repositorios_contrato.TestRepositorioEnMemoria.test_repositorio_nuevo_esta_vacio) ... ok
+test_error_de_escritura_lanza_repositorio_error (tests.test_repositorios_contrato.TestRepositorioJSON.test_error_de_escritura_lanza_repositorio_error) ... ok
+test_estado_desconocido_en_archivo_lanza_repositorio_error (tests.test_repositorios_contrato.TestRepositorioJSON.test_estado_desconocido_en_archivo_lanza_repositorio_error) ... ok
+test_guardar_reemplaza_el_contenido (tests.test_repositorios_contrato.TestRepositorioJSON.test_guardar_reemplaza_el_contenido) ... ok
+test_guardar_y_obtener (tests.test_repositorios_contrato.TestRepositorioJSON.test_guardar_y_obtener) ... ok
+test_json_corrupto_lanza_repositorio_error_y_no_toca_el_archivo (tests.test_repositorios_contrato.TestRepositorioJSON.test_json_corrupto_lanza_repositorio_error_y_no_toca_el_archivo) ... ok
+test_modificar_lo_leido_no_persiste_sin_guardar (tests.test_repositorios_contrato.TestRepositorioJSON.test_modificar_lo_leido_no_persiste_sin_guardar) ... ok
+test_no_queda_archivo_temporal (tests.test_repositorios_contrato.TestRepositorioJSON.test_no_queda_archivo_temporal) ... ok
+test_persiste_entre_instancias (tests.test_repositorios_contrato.TestRepositorioJSON.test_persiste_entre_instancias) ... ok
+test_registro_con_clave_faltante_lanza_repositorio_error (tests.test_repositorios_contrato.TestRepositorioJSON.test_registro_con_clave_faltante_lanza_repositorio_error) ... ok
+test_repositorio_nuevo_esta_vacio (tests.test_repositorios_contrato.TestRepositorioJSON.test_repositorio_nuevo_esta_vacio) ... ok
+test_se_crea_el_archivo_si_no_existe (tests.test_repositorios_contrato.TestRepositorioJSON.test_se_crea_el_archivo_si_no_existe) ... ok
+test_asignar_id_inexistente (tests.test_servicios.TestCambiarEstadoYAsignar.test_asignar_id_inexistente) ... ok
+test_asignar_responsable_persiste (tests.test_servicios.TestCambiarEstadoYAsignar.test_asignar_responsable_persiste) ... ok
+test_cambiar_estado_id_inexistente (tests.test_servicios.TestCambiarEstadoYAsignar.test_cambiar_estado_id_inexistente) ... ok
+test_cambiar_estado_invalido_no_modifica (tests.test_servicios.TestCambiarEstadoYAsignar.test_cambiar_estado_invalido_no_modifica) ... ok
+test_cambiar_estado_persiste (tests.test_servicios.TestCambiarEstadoYAsignar.test_cambiar_estado_persiste) ... ok
+test_id_inexistente_tiene_prioridad_sobre_estado_invalido (tests.test_servicios.TestCambiarEstadoYAsignar.test_id_inexistente_tiene_prioridad_sobre_estado_invalido) ... ok
+test_filtrar_dni_y_estado_combina_con_o (tests.test_servicios.TestConsultas.test_filtrar_dni_y_estado_combina_con_o) ... ok
+test_filtrar_estado_desconocido_no_falla (tests.test_servicios.TestConsultas.test_filtrar_estado_desconocido_no_falla) ... ok
+test_filtrar_por_dni (tests.test_servicios.TestConsultas.test_filtrar_por_dni) ... ok
+test_filtrar_por_estado (tests.test_servicios.TestConsultas.test_filtrar_por_estado) ... ok
+test_filtrar_por_estado_como_texto (tests.test_servicios.TestConsultas.test_filtrar_por_estado_como_texto) ... ok
+test_filtrar_sin_criterios_devuelve_vacio (tests.test_servicios.TestConsultas.test_filtrar_sin_criterios_devuelve_vacio) ... ok
+test_reporte_estadistico (tests.test_servicios.TestConsultas.test_reporte_estadistico) ... ok
+test_reporte_sin_datos (tests.test_servicios.TestConsultas.test_reporte_sin_datos) ... ok
+test_crear_solicitud_valida (tests.test_servicios.TestCrearSolicitud.test_crear_solicitud_valida) ... ok
+test_dni_invalido_lanza_excepcion_y_no_persiste (tests.test_servicios.TestCrearSolicitud.test_dni_invalido_lanza_excepcion_y_no_persiste) ... ok
+test_ids_consecutivos (tests.test_servicios.TestCrearSolicitud.test_ids_consecutivos) ... ok
+test_tipo_vacio_lanza_excepcion (tests.test_servicios.TestCrearSolicitud.test_tipo_vacio_lanza_excepcion) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.031s
+
+OK

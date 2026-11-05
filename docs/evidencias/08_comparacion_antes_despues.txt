@@ -1,0 +1,129 @@
+COMPARACION ANTES/DESPUES - misma secuencia sobre v1 y v2 (archivos separados)
+
+Paso 01 - crear valida  [CREAR]  parametros: {'dni': '30111222', 'nombre': 'Estudiante Demo 1', 'tipo': 'Equivalencia', 'desc': 'Pedido de pase'}
+   v1 -> devuelve True | imprime: Solicitud creada con exito.
+   v2 -> devuelve True | imprime: Solicitud creada con exito.
+   resultado: IGUAL
+
+Paso 02 - crear segunda  [CREAR]  parametros: {'dni': '31222333', 'nombre': 'Estudiante Demo 2', 'tipo': 'Reclamo', 'desc': 'Reclamo de nota'}
+   v1 -> devuelve True | imprime: Solicitud creada con exito.
+   v2 -> devuelve True | imprime: Solicitud creada con exito.
+   resultado: IGUAL
+
+Paso 03 - crear dni corto  [CREAR]  parametros: {'dni': '123', 'nombre': 'Demo', 'tipo': 'Reclamo', 'desc': 'x'}
+   v1 -> devuelve False | imprime: Error: Datos invalidos.
+   v2 -> devuelve False | imprime: Error: Datos invalidos.
+   resultado: IGUAL
+
+Paso 04 - crear dni vacio  [CREAR]  parametros: {'dni': '', 'nombre': 'Demo', 'tipo': 'Reclamo', 'desc': 'x'}
+   v1 -> devuelve False | imprime: Error: Datos invalidos.
+   v2 -> devuelve False | imprime: Error: Datos invalidos.
+   resultado: IGUAL
+
+Paso 05 - crear sin dni  [CREAR]  parametros: {'nombre': 'Demo', 'tipo': 'Reclamo', 'desc': 'x'}
+   v1 -> devuelve False | imprime: Error: Datos invalidos.
+   v2 -> devuelve False | imprime: Error: Datos invalidos.
+   resultado: IGUAL
+
+Paso 06 - crear tipo vacio  [CREAR]  parametros: {'dni': '30111222', 'nombre': 'Demo', 'tipo': '', 'desc': 'x'}
+   v1 -> devuelve False | imprime: Error: Datos invalidos.
+   v2 -> devuelve False | imprime: Error: Datos invalidos.
+   resultado: IGUAL
+
+Paso 07 - crear dni de 7  [CREAR]  parametros: {'dni': '1234567', 'nombre': 'Demo 3', 'tipo': 'Excepcion', 'desc': 'limite'}
+   v1 -> devuelve True | imprime: Solicitud creada con exito.
+   v2 -> devuelve True | imprime: Solicitud creada con exito.
+   resultado: IGUAL
+
+Paso 08 - crear sin nombre  [CREAR]  parametros: {'dni': '40111222', 'tipo': 'Reclamo'}
+   v1 -> devuelve True | imprime: Solicitud creada con exito.
+   v2 -> devuelve True | imprime: Solicitud creada con exito.
+   resultado: IGUAL
+
+Paso 09 - estado valido  [CAMBIAR_ESTADO]  parametros: {'id_sol': 1, 'estado': 'EN_PROCESO'}
+   v1 -> devuelve True | imprime: Estado de la solicitud 1 actualizado a EN_PROCESO.
+   v2 -> devuelve True | imprime: Estado de la solicitud 1 actualizado a EN_PROCESO.
+   resultado: IGUAL
+
+Paso 10 - estado resuelto  [CAMBIAR_ESTADO]  parametros: {'id_sol': 2, 'estado': 'RESUELTO'}
+   v1 -> devuelve True | imprime: Estado de la solicitud 2 actualizado a RESUELTO.
+   v2 -> devuelve True | imprime: Estado de la solicitud 2 actualizado a RESUELTO.
+   resultado: IGUAL
+
+Paso 11 - estado invalido  [CAMBIAR_ESTADO]  parametros: {'id_sol': 1, 'estado': 'ARCHIVADO'}
+   v1 -> devuelve False | imprime: Estado invalido.
+   v2 -> devuelve False | imprime: Estado invalido.
+   resultado: IGUAL
+
+Paso 12 - estado nulo  [CAMBIAR_ESTADO]  parametros: {'id_sol': 1}
+   v1 -> devuelve False | imprime: Estado invalido.
+   v2 -> devuelve False | imprime: Estado invalido.
+   resultado: IGUAL
+
+Paso 13 - estado en minusculas  [CAMBIAR_ESTADO]  parametros: {'id_sol': 1, 'estado': 'resuelto'}
+   v1 -> devuelve False | imprime: Estado invalido.
+   v2 -> devuelve False | imprime: Estado invalido.
+   resultado: IGUAL
+
+Paso 14 - estado id inexistente  [CAMBIAR_ESTADO]  parametros: {'id_sol': 99, 'estado': 'RESUELTO'}
+   v1 -> devuelve False | imprime: Solicitud no encontrada.
+   v2 -> devuelve False | imprime: Solicitud no encontrada.
+   resultado: IGUAL
+
+Paso 15 - estado invalido e id inexistente  [CAMBIAR_ESTADO]  parametros: {'id_sol': 99, 'estado': 'X'}
+   v1 -> devuelve False | imprime: Solicitud no encontrada.
+   v2 -> devuelve False | imprime: Solicitud no encontrada.
+   resultado: IGUAL
+
+Paso 16 - asignar valido  [ASIGNAR]  parametros: {'id_sol': 1, 'resp': 'Area Alumnos'}
+   v1 -> devuelve True | imprime: Responsable Area Alumnos asignado a la solicitud 1.
+   v2 -> devuelve True | imprime: Responsable Area Alumnos asignado a la solicitud 1.
+   resultado: IGUAL
+
+Paso 17 - asignar sin responsable  [ASIGNAR]  parametros: {'id_sol': 3}
+   v1 -> devuelve True | imprime: Responsable None asignado a la solicitud 3.
+   v2 -> devuelve True | imprime: Responsable None asignado a la solicitud 3.
+   resultado: IGUAL
+
+Paso 18 - asignar id inexistente  [ASIGNAR]  parametros: {'id_sol': 99, 'resp': 'Area Alumnos'}
+   v1 -> devuelve False | imprime: Solicitud no encontrada.
+   v2 -> devuelve False | imprime: Solicitud no encontrada.
+   resultado: IGUAL
+
+Paso 19 - filtrar por dni  [FILTRAR]  parametros: {'dni': '30111222'}
+   v1 -> devuelve [{'id': 1, 'dni': '30111222', 'estudiante': 'Estudiante Demo 1', 'tipo': 'Equivalencia', 'descripcion': 'Pedido de pase', 'estado': 'EN_PROCESO', 'responsable': 'Area Alumnos', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (1) --- // ID: 1 | DNI: 30111222 | Estudiante: Estudiante Demo 1 | Tipo: Equivalencia | Estado: EN_PROCESO | Resp: Area Alumnos
+   v2 -> devuelve [{'id': 1, 'dni': '30111222', 'estudiante': 'Estudiante Demo 1', 'tipo': 'Equivalencia', 'descripcion': 'Pedido de pase', 'estado': 'EN_PROCESO', 'responsable': 'Area Alumnos', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (1) --- // ID: 1 | DNI: 30111222 | Estudiante: Estudiante Demo 1 | Tipo: Equivalencia | Estado: EN_PROCESO | Resp: Area Alumnos
+   resultado: IGUAL
+
+Paso 20 - filtrar por estado  [FILTRAR]  parametros: {'estado': 'RESUELTO'}
+   v1 -> devuelve [{'id': 2, 'dni': '31222333', 'estudiante': 'Estudiante Demo 2', 'tipo': 'Reclamo', 'descripcion': 'Reclamo de nota', 'estado': 'RESUELTO', 'responsable': 'SIN ASIGNAR', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (1) --- // ID: 2 | DNI: 31222333 | Estudiante: Estudiante Demo 2 | Tipo: Reclamo | Estado: RESUELTO | Resp: SIN ASIGNAR
+   v2 -> devuelve [{'id': 2, 'dni': '31222333', 'estudiante': 'Estudiante Demo 2', 'tipo': 'Reclamo', 'descripcion': 'Reclamo de nota', 'estado': 'RESUELTO', 'responsable': 'SIN ASIGNAR', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (1) --- // ID: 2 | DNI: 31222333 | Estudiante: Estudiante Demo 2 | Tipo: Reclamo | Estado: RESUELTO | Resp: SIN ASIGNAR
+   resultado: IGUAL
+
+Paso 21 - filtrar por dni y estado  [FILTRAR]  parametros: {'dni': '30111222', 'estado': 'RESUELTO'}
+   v1 -> devuelve [{'id': 1, 'dni': '30111222', 'estudiante': 'Estudiante Demo 1', 'tipo': 'Equivalencia', 'descripcion': 'Pedido de pase', 'estado': 'EN_PROCESO', 'responsable': 'Area Alumnos', 'fecha': '2026-11-05'}, {'id': 2, 'dni': '31222333', 'estudiante': 'Estudiante Demo 2', 'tipo': 'Reclamo', 'descripcion': 'Reclamo de nota', 'estado': 'RESUELTO', 'responsable': 'SIN ASIGNAR', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (2) --- // ID: 1 | DNI: 30111222 | Estudiante: Estudiante Demo 1 | Tipo: Equivalencia | Estado: EN_PROCESO | Resp: Area Alumnos // ID: 2 | DNI: 31222333 | Estudiante: Estudiante Demo 2 | Tipo: Reclamo | Estado: RESUELTO | Resp: SIN ASIGNAR
+   v2 -> devuelve [{'id': 1, 'dni': '30111222', 'estudiante': 'Estudiante Demo 1', 'tipo': 'Equivalencia', 'descripcion': 'Pedido de pase', 'estado': 'EN_PROCESO', 'responsable': 'Area Alumnos', 'fecha': '2026-11-05'}, {'id': 2, 'dni': '31222333', 'estudiante': 'Estudiante Demo 2', 'tipo': 'Reclamo', 'descripcion': 'Reclamo de nota', 'estado': 'RESUELTO', 'responsable': 'SIN ASIGNAR', 'fecha': '2026-11-05'}] | imprime: --- RESULTADOS DE BUSQUEDA (2) --- // ID: 1 | DNI: 30111222 | Estudiante: Estudiante Demo 1 | Tipo: Equivalencia | Estado: EN_PROCESO | Resp: Area Alumnos // ID: 2 | DNI: 31222333 | Estudiante: Estudiante Demo 2 | Tipo: Reclamo | Estado: RESUELTO | Resp: SIN ASIGNAR
+   resultado: IGUAL
+
+Paso 22 - filtrar sin criterios  [FILTRAR]  parametros: {}
+   v1 -> devuelve [] | imprime: --- RESULTADOS DE BUSQUEDA (0) ---
+   v2 -> devuelve [] | imprime: --- RESULTADOS DE BUSQUEDA (0) ---
+   resultado: IGUAL
+
+Paso 23 - filtrar sin coincidencias  [FILTRAR]  parametros: {'dni': '99999999'}
+   v1 -> devuelve [] | imprime: --- RESULTADOS DE BUSQUEDA (0) ---
+   v2 -> devuelve [] | imprime: --- RESULTADOS DE BUSQUEDA (0) ---
+   resultado: IGUAL
+
+Paso 24 - reporte  [REPORTE]  parametros: {}
+   v1 -> devuelve {'total': 4, 'pendientes': 2, 'resueltos': 1} | imprime: === REPORTE GENERAL DE SOLICITUDES === // Total: 4 | Pendientes: 2 | Resueltos: 1
+   v2 -> devuelve {'total': 4, 'pendientes': 2, 'resueltos': 1} | imprime: === REPORTE GENERAL DE SOLICITUDES === // Total: 4 | Pendientes: 2 | Resueltos: 1
+   resultado: IGUAL
+
+Paso 25 - operacion desconocida  [BORRAR]  parametros: {'id_sol': 1}
+   v1 -> devuelve None | imprime: 
+   v2 -> devuelve None | imprime: 
+   resultado: IGUAL
+
+Pasos iguales: 25 de 25
+Archivos JSON finales identicos byte a byte: SI

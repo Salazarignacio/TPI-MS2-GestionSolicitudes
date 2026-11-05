@@ -1,0 +1,11 @@
+Name                         Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------------------
+solicitudes/__init__.py          6      0      0      0   100%
+solicitudes/__main__.py         14      1      2      1    88%   22
+solicitudes/consola.py          69      0      4      0   100%
+solicitudes/excepciones.py      11      0      0      0   100%
+solicitudes/modelos.py          48      0      8      0   100%
+solicitudes/repositorio.py      47      0      2      0   100%
+solicitudes/servicios.py        49      0      4      0   100%
+------------------------------------------------------------------------
+TOTAL                          244      1     20      1    99%

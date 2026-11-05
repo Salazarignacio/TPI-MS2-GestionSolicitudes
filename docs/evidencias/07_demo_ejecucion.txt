@@ -1,0 +1,8 @@
+Solicitud creada con exito.
+Error: Datos invalidos.
+Responsable Area Alumnos asignado a la solicitud 1.
+Estado de la solicitud 1 actualizado a RESUELTO.
+--- RESULTADOS DE BUSQUEDA (1) ---
+ID: 1 | DNI: 30111222 | Estudiante: Estudiante Demo 1 | Tipo: Equivalencia | Estado: RESUELTO | Resp: Area Alumnos
+=== REPORTE GENERAL DE SOLICITUDES ===
+Total: 1 | Pendientes: 0 | Resueltos: 1
