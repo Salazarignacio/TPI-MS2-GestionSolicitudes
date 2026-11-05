@@ -1,0 +1,41 @@
+digraph despues {
+  graph [rankdir=TB, fontname="Carlito", fontsize=12, pad=0.3, nodesep=0.35, ranksep=0.55];
+  node  [shape=record, fontname="Carlito", fontsize=11, color=black, fontcolor=black];
+  edge  [fontname="Carlito", fontsize=10, color=black, fontcolor=black];
+
+  consola [label="{GestorSolicitudesConsola|+ ejecutar_operacion(...)\l- _operaciones : dict\l}"];
+  peticion [label="{Peticion|id_sol, dni, nombre, tipo,\ldesc, estado, resp\l}"];
+  cmd [label="{SolicitudService|+ crear_solicitud(datos)\l+ cambiar_estado(id, estado)\l+ asignar_responsable(id, nombre)\l}"];
+  qry [label="{ConsultaService|+ filtrar(dni, estado)\l+ generar_reporte()\l}"];
+
+  lect [label="{\<\<abstract\>\>\nSolicitudLectura|+ obtener_todas()\l}"];
+  escr [label="{\<\<abstract\>\>\nSolicitudEscritura|+ guardar_todas(lista)\l}"];
+  repo [label="{\<\<abstract\>\>\nSolicitudRepository}"];
+  rjson [label="{RepositorioJSON|- archivo : str\l}"];
+  rmem [label="{RepositorioEnMemoria|- _almacen : list\l}"];
+
+  sol [label="{Solicitud|id, tipo, descripcion, fecha\lestado, responsable\l|+ cambiar_estado()\l+ asignar_a()\l}"];
+  est [label="{Estudiante|dni, nombre\l}"];
+  resp [label="{Responsable|nombre\l}"];
+  enum [label="{\<\<enum\>\>\nEstadoSolicitud|PENDIENTE\lEN_PROCESO\lRESUELTO\lRECHAZADO\l}"];
+  dto [label="{DatosNuevaSolicitud|dni, estudiante, tipo,\ldescripcion\l|+ validar()\l}"];
+  exc [label="{SolicitudesError|DatosInvalidosError\lEstadoInvalidoError\lSolicitudNoEncontradaError\lRepositorioError\l}"];
+
+  consola -> peticion [arrowhead=vee, style=dashed, label="usa"];
+  consola -> cmd [arrowhead=vee];
+  consola -> qry [arrowhead=vee];
+  cmd -> repo [arrowhead=vee, label="depende de\nabstraccion"];
+  qry -> lect [arrowhead=vee, label="solo lectura"];
+  cmd -> dto [arrowhead=vee, style=dashed];
+  cmd -> sol [arrowhead=vee, style=dashed, label="crea"];
+  repo -> lect [arrowhead=empty];
+  repo -> escr [arrowhead=empty];
+  rjson -> repo [arrowhead=empty];
+  rmem -> repo [arrowhead=empty];
+  sol -> est [arrowhead=odiamond];
+  sol -> resp [arrowhead=odiamond];
+  sol -> enum [arrowhead=vee];
+  {rank=same; lect; escr}
+  {rank=same; rjson; rmem}
+  {rank=same; sol; dto; exc}
+}

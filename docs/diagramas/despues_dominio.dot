@@ -1,0 +1,16 @@
+digraph dominio {
+  graph [rankdir=TB, fontname="Carlito", pad=0.25, nodesep=0.5, ranksep=0.6];
+  node  [shape=record, fontname="Carlito", fontsize=14, color=black, fontcolor=black];
+  edge  [fontname="Carlito", fontsize=12, color=black, fontcolor=black];
+  dto [label="{DatosNuevaSolicitud|dni, estudiante, tipo,\ldescripcion\l|+ validar()\l}"];
+  sol [label="{Solicitud|id, tipo, descripcion, fecha\lestado, responsable\l|+ cambiar_estado()\l+ asignar_a()\l}"];
+  exc [label="{SolicitudesError|DatosInvalidosError\lEstadoInvalidoError\lSolicitudNoEncontradaError\lRepositorioError\l}"];
+  est [label="{Estudiante|dni, nombre\l}"];
+  resp [label="{Responsable|nombre\l}"];
+  enum [label="{\<\<enum\>\>\nEstadoSolicitud|PENDIENTE\lEN_PROCESO\lRESUELTO\lRECHAZADO\l}"];
+  sol -> est [arrowhead=odiamond];
+  sol -> resp [arrowhead=odiamond];
+  sol -> enum [arrowhead=vee];
+  {rank=same; dto; sol; exc}
+  {rank=same; est; resp; enum}
+}

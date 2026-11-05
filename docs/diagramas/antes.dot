@@ -1,0 +1,10 @@
+digraph antes {
+  graph [rankdir=TB, fontname="Carlito", fontsize=12, pad=0.3, nodesep=0.5];
+  node  [shape=record, fontname="Carlito", fontsize=12, color=black, fontcolor=black];
+  edge  [fontname="Carlito", fontsize=11, color=black, fontcolor=black];
+  gestor [label="{GestorSolicitudesSistema|+ archivo : str|+ ejecutar_operacion(op, id_sol, dni, nombre,\ntipo, desc, estado, resp)\l   CREAR / CAMBIAR_ESTADO / ASIGNAR /\l   FILTRAR / REPORTE (if/elif)\l   valida datos, lee y escribe JSON,\l   arma mensajes de consola\l}"];
+  json [shape=note, label="solicitudes.json"];
+  consola [shape=box, style=dashed, label="Consola (print)"];
+  gestor -> json [label="open / json.load /\njson.dump"];
+  gestor -> consola [label="print"];
+}

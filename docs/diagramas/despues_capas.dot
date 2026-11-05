@@ -1,0 +1,25 @@
+digraph capas {
+  graph [rankdir=TB, fontname="Carlito", pad=0.25, nodesep=0.45, ranksep=0.6];
+  node  [shape=record, fontname="Carlito", fontsize=14, color=black, fontcolor=black];
+  edge  [fontname="Carlito", fontsize=12, color=black, fontcolor=black];
+  consola [label="{GestorSolicitudesConsola|+ ejecutar_operacion(...)\l- _operaciones : dict\l}"];
+  peticion [label="{Peticion|id_sol, dni, nombre, tipo,\ldesc, estado, resp\l}"];
+  cmd [label="{SolicitudService|+ crear_solicitud(datos)\l+ cambiar_estado(id, estado)\l+ asignar_responsable(id, nombre)\l}"];
+  qry [label="{ConsultaService|+ filtrar(dni, estado)\l+ generar_reporte()\l}"];
+  lect [label="{\<\<abstract\>\>\nSolicitudLectura|+ obtener_todas()\l}"];
+  escr [label="{\<\<abstract\>\>\nSolicitudEscritura|+ guardar_todas(lista)\l}"];
+  repo [label="{\<\<abstract\>\>\nSolicitudRepository}"];
+  rjson [label="{RepositorioJSON|- archivo : str\l}"];
+  rmem [label="{RepositorioEnMemoria|- _almacen : list\l}"];
+  consola -> peticion [arrowhead=vee, style=dashed, label=" usa"];
+  consola -> cmd [arrowhead=vee];
+  consola -> qry [arrowhead=vee];
+  cmd -> repo [arrowhead=vee, label=" depende de la\n abstraccion"];
+  qry -> lect [arrowhead=vee, label=" solo lectura"];
+  repo -> lect [arrowhead=empty];
+  repo -> escr [arrowhead=empty];
+  rjson -> repo [arrowhead=empty];
+  rmem -> repo [arrowhead=empty];
+  {rank=same; lect; escr}
+  {rank=same; rjson; rmem}
+}
